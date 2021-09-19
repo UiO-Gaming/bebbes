@@ -1,0 +1,31 @@
+.container {
+  display: grid;
+  gap: 2rem;
+}
+.form {
+  display: grid;
+  justify-self: center;
+  align-self: start;
+}
+.formPeople {
+  grid-area: 1 / span 2;
+}
+.resultContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-self: start;
+}
+.results {
+  display: grid;
+  gap: 1rem;
+  place-items: center;
+}
+
+.big {
+  font-size: 2rem;
+  font-weight: 900;
+}
+.or {
+  font-weight: 100;
+}
