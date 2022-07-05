@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  bebbes:
+    container_name: bebbes
+    build: .
+    ports:
+      - "5001:5000"
