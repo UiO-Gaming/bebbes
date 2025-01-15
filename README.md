@@ -17,7 +17,7 @@ Jo nå skal jeg fortelle deg du.
 Alt du trenger å gjøre er å klone prosjektet. Så skriver du:
 
 ```
-yarn install
+npm install
 ```
 
 ...som vil laste ned alle de deilige, ikke overkill eller bloated node modulene du trenger for å kjøre noe som egentlig kunne blitt skrevet med god gammaldags vanilla html, css og javascript.
@@ -25,7 +25,7 @@ yarn install
 Så for å kjøre driten så er det bare å skrive:
 
 ```
-yarn dev
+npm run dev
 ```
 
 OG VIPPS SÅ ER DU FERDIG!
