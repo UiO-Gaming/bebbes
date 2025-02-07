@@ -58,7 +58,7 @@ const Calculator = () => {
             setThirstyness(Number(e.target.value));
           }}
         >
-          <option value={0.33}>Noe å sippe på</option>
+          <option value={0.33}>Noe å småslurke på</option>
           <option value={0.5} selected={true}>
             Tørst
           </option>
