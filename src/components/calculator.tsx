@@ -27,12 +27,13 @@ const Calculator = () => {
   const [hungriness, setHungriness] = useState(3);
 
   return (
-    <div className={styles.container}>
+    <main className={styles.container}>
       <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
         <input
           className={styles.formPeople}
           type="number"
           placeholder="Antall personer"
+          aria-label="Antall personer"
           min={1}
           max={MAX_PEOPLE}
           step={1}
@@ -47,6 +48,7 @@ const Calculator = () => {
         />
 
         <select
+          aria-label="Hvor tørste er dere?"
           value={thirstiness}
           onChange={(e) => {
             setThirstiness(Number(e.target.value));
@@ -58,6 +60,7 @@ const Calculator = () => {
         </select>
 
         <select
+          aria-label="Hvor sultne er dere?"
           value={hungriness}
           onChange={(e) => {
             setHungriness(Number(e.target.value));
@@ -101,7 +104,7 @@ const Calculator = () => {
           </p>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 
