@@ -1,12 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;900&display=swap");
-
 /* ===== Variables ===== */
 
 :root {
   --main-color: rgb(226, 35, 26);
   --main-background-color: rgb(22, 20, 31);
 
-  --main-font: "Poppins", sans-serif;
+  --main-font: "Nunito", sans-serif;
 }
 
 /* ===== RESET ===== */

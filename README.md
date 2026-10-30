@@ -36,4 +36,4 @@ Jeg hoppet inn i voice, spurte om navnforslag, fikk svaret "peppes der hvor alle
 
 ## Hvorfor er alt på nettsiden i små bokstaver
 
-Å HA SMÅ BOKSTAVER FOR ALT ER TRENDY NÅ, MEN EGENTLIG SÅ ER DET BARE FORDI SMÅ BOKSTAVER SER BRA UT I FONTEN VI BRUKER, POPPINS.
+Å HA SMÅ BOKSTAVER FOR ALT ER TRENDY NÅ, MEN EGENTLIG SÅ ER DET BARE FORDI SMÅ BOKSTAVER SER BRA UT I FONTEN VI BRUKER, NUNITO.
