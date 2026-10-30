@@ -1,14 +1,6 @@
 import React, { useState } from "react";
 import styles from "./calculator.module.css";
 
-import { useForm } from "react-hook-form";
-
-type calcTypes = {
-  people: number;
-  thirstyness: number;
-  hungriness: number;
-};
-
 const calculateLiters = (people: number, thirstyness: number) => {
   return Math.ceil(people * thirstyness);
 };
@@ -26,11 +18,6 @@ const calculatePizzas = (people: number, hungriness: number) => {
 };
 
 const Calculator = () => {
-  const {
-    register,
-    formState: { errors },
-  } = useForm<calcTypes>();
-
   const [people, setPeople] = useState(0);
   const [thirstyness, setThirstyness] = useState(0.5);
   const [hungriness, setHungriness] = useState(3);
@@ -42,7 +29,6 @@ const Calculator = () => {
           className={styles.formPeople}
           type="number"
           placeholder="Antall personer"
-          {...(register("people"), { required: true, min: 1, max: 3000 })}
           onChange={(e) => {
             if (!e.target.value) {
               setPeople(0);
@@ -53,7 +39,6 @@ const Calculator = () => {
         />
 
         <select
-          {...register("thirstyness")}
           onChange={(e) => {
             setThirstyness(Number(e.target.value));
           }}
@@ -66,7 +51,6 @@ const Calculator = () => {
         </select>
 
         <select
-          {...register("hungriness")}
           onChange={(e) => {
             setHungriness(Number(e.target.value));
           }}
