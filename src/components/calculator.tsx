@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "./calculator.module.css";
 
 const MAX_PEOPLE = 3000;
