@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styles from "./calculator.module.css";
 
+const MAX_PEOPLE = 3000;
+
 const calculateLiters = (people: number, thirstyness: number) => {
   return Math.ceil(people * thirstyness);
 };
@@ -29,12 +31,16 @@ const Calculator = () => {
           className={styles.formPeople}
           type="number"
           placeholder="Antall personer"
+          min={1}
+          max={MAX_PEOPLE}
+          step={1}
           onChange={(e) => {
-            if (!e.target.value) {
-              setPeople(0);
-            } else {
-              setPeople(e.target.valueAsNumber);
-            }
+            const value = e.target.valueAsNumber;
+            setPeople(
+              Number.isNaN(value)
+                ? 0
+                : Math.min(Math.max(Math.floor(value), 0), MAX_PEOPLE)
+            );
           }}
         />
 
