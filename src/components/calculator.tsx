@@ -2,13 +2,15 @@ import { useState } from "react";
 import styles from "./calculator.module.css";
 
 const MAX_PEOPLE = 3000;
+const BOTTLE_LITERS = 1.5;
+const SLICES_PER_PIZZA = 8;
 
 const calculateLiters = (people: number, thirstiness: number) => {
   return Math.ceil(people * thirstiness);
 };
 
 const calculateBottles = (people: number, thirstiness: number) => {
-  return Math.ceil((people * thirstiness) / 1.5);
+  return Math.ceil((people * thirstiness) / BOTTLE_LITERS);
 };
 
 const calculatePizzaSlices = (people: number, hungriness: number) => {
@@ -16,7 +18,7 @@ const calculatePizzaSlices = (people: number, hungriness: number) => {
 };
 
 const calculatePizzas = (people: number, hungriness: number) => {
-  return Math.ceil(calculatePizzaSlices(people, hungriness) / 8);
+  return Math.ceil(calculatePizzaSlices(people, hungriness) / SLICES_PER_PIZZA);
 };
 
 const Calculator = () => {
