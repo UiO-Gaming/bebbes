@@ -37,7 +37,7 @@ const Calculator = () => {
 
   return (
     <div className={styles.container}>
-      <form className={styles.form}>
+      <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
         <input
           className={styles.formPeople}
           type="number"
