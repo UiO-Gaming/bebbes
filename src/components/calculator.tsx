@@ -45,26 +45,24 @@ const Calculator = () => {
         />
 
         <select
+          value={thirstyness}
           onChange={(e) => {
             setThirstyness(Number(e.target.value));
           }}
         >
           <option value={0.33}>Noe å småslurke på</option>
-          <option value={0.5} selected={true}>
-            Tørst
-          </option>
+          <option value={0.5}>Tørst</option>
           <option value={0.7}>Dehydrert</option>
         </select>
 
         <select
+          value={hungriness}
           onChange={(e) => {
             setHungriness(Number(e.target.value));
           }}
         >
           <option value={2}>Småspising</option>
-          <option selected={true} value={3}>
-            Sulten
-          </option>
+          <option value={3}>Sulten</option>
           <option value={5}>Skrubbsulten</option>
         </select>
       </form>
