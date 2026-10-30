@@ -8,7 +8,7 @@ const calculateLiters = (people: number, thirstyness: number) => {
 };
 
 const calculateBottles = (people: number, thirstyness: number) => {
-  return Math.ceil(calculateLiters(people, thirstyness) / 1.5);
+  return Math.ceil((people * thirstyness) / 1.5);
 };
 
 const calculatePizzaSlices = (people: number, hungriness: number) => {
