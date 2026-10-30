@@ -3,12 +3,12 @@ import styles from "./calculator.module.css";
 
 const MAX_PEOPLE = 3000;
 
-const calculateLiters = (people: number, thirstyness: number) => {
-  return Math.ceil(people * thirstyness);
+const calculateLiters = (people: number, thirstiness: number) => {
+  return Math.ceil(people * thirstiness);
 };
 
-const calculateBottles = (people: number, thirstyness: number) => {
-  return Math.ceil((people * thirstyness) / 1.5);
+const calculateBottles = (people: number, thirstiness: number) => {
+  return Math.ceil((people * thirstiness) / 1.5);
 };
 
 const calculatePizzaSlices = (people: number, hungriness: number) => {
@@ -21,7 +21,7 @@ const calculatePizzas = (people: number, hungriness: number) => {
 
 const Calculator = () => {
   const [people, setPeople] = useState(0);
-  const [thirstyness, setThirstyness] = useState(0.5);
+  const [thirstiness, setThirstiness] = useState(0.5);
   const [hungriness, setHungriness] = useState(3);
 
   return (
@@ -45,9 +45,9 @@ const Calculator = () => {
         />
 
         <select
-          value={thirstyness}
+          value={thirstiness}
           onChange={(e) => {
-            setThirstyness(Number(e.target.value));
+            setThirstiness(Number(e.target.value));
           }}
         >
           <option value={0.33}>Noe å småslurke på</option>
@@ -71,14 +71,14 @@ const Calculator = () => {
         <div className={styles.results}>
           <p>
             <span className={styles.big}>
-              {calculateLiters(people, thirstyness)}
+              {calculateLiters(people, thirstiness)}
             </span>{" "}
             liter
           </p>
           <p className={styles.or}>eller</p>
           <p>
             <span className={styles.big}>
-              {calculateBottles(people, thirstyness)}
+              {calculateBottles(people, thirstiness)}
             </span>{" "}
             flasker (1,5L)
           </p>
