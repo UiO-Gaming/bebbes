@@ -28,6 +28,11 @@ const Calculator = () => {
   const [thirstiness, setThirstiness] = useState(50);
   const [hungriness, setHungriness] = useState(3);
 
+  const liters = calculateLiters(people, thirstiness);
+  const bottles = calculateBottles(people, thirstiness);
+  const pizzaSlices = calculatePizzaSlices(people, hungriness);
+  const pizzas = calculatePizzas(people, hungriness);
+
   return (
     <main className={styles.container}>
       <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
@@ -78,31 +83,31 @@ const Calculator = () => {
         <div className={styles.results}>
           <p>
             <span className={styles.big}>
-              {formatNumber(calculateLiters(people, thirstiness))}
+              {formatNumber(liters)}
             </span>{" "}
             liter
           </p>
           <p className={styles.or}>eller</p>
           <p>
             <span className={styles.big}>
-              {formatNumber(calculateBottles(people, thirstiness))}
+              {formatNumber(bottles)}
             </span>{" "}
-            flasker (1,5L)
+            {bottles === 1 ? "flaske" : "flasker"} (1,5L)
           </p>
         </div>
         <div className={styles.results}>
           <p>
             <span className={styles.big}>
-              {formatNumber(calculatePizzaSlices(people, hungriness))}
+              {formatNumber(pizzaSlices)}
             </span>{" "}
-            pizzastykker
+            {pizzaSlices === 1 ? "pizzastykke" : "pizzastykker"}
           </p>
           <p className={styles.or}>eller</p>
           <p>
             <span className={styles.big}>
-              {formatNumber(calculatePizzas(people, hungriness))}
+              {formatNumber(pizzas)}
             </span>{" "}
-            store pizzaer
+            {pizzas === 1 ? "stor pizza" : "store pizzaer"}
           </p>
         </div>
       </div>
