@@ -5,8 +5,10 @@ const MAX_PEOPLE = 3000;
 const BOTTLE_CENTILITERS = 150;
 const SLICES_PER_PIZZA = 8;
 
+const formatNumber = (value: number) => value.toLocaleString("nb-NO");
+
 const calculateLiters = (people: number, thirstiness: number) => {
-  return Math.ceil((people * thirstiness) / 100);
+  return Math.ceil((people * thirstiness) / 10) / 10;
 };
 
 const calculateBottles = (people: number, thirstiness: number) => {
@@ -76,14 +78,14 @@ const Calculator = () => {
         <div className={styles.results}>
           <p>
             <span className={styles.big}>
-              {calculateLiters(people, thirstiness)}
+              {formatNumber(calculateLiters(people, thirstiness))}
             </span>{" "}
             liter
           </p>
           <p className={styles.or}>eller</p>
           <p>
             <span className={styles.big}>
-              {calculateBottles(people, thirstiness)}
+              {formatNumber(calculateBottles(people, thirstiness))}
             </span>{" "}
             flasker (1,5L)
           </p>
@@ -91,14 +93,14 @@ const Calculator = () => {
         <div className={styles.results}>
           <p>
             <span className={styles.big}>
-              {calculatePizzaSlices(people, hungriness)}
+              {formatNumber(calculatePizzaSlices(people, hungriness))}
             </span>{" "}
             pizzastykker
           </p>
           <p className={styles.or}>eller</p>
           <p>
             <span className={styles.big}>
-              {calculatePizzas(people, hungriness)}
+              {formatNumber(calculatePizzas(people, hungriness))}
             </span>{" "}
             store pizzaer
           </p>
