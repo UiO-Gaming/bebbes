@@ -2,15 +2,15 @@ import { useState } from "react";
 import styles from "./calculator.module.css";
 
 const MAX_PEOPLE = 3000;
-const BOTTLE_LITERS = 1.5;
+const BOTTLE_CENTILITERS = 150;
 const SLICES_PER_PIZZA = 8;
 
 const calculateLiters = (people: number, thirstiness: number) => {
-  return Math.ceil(people * thirstiness);
+  return Math.ceil((people * thirstiness) / 100);
 };
 
 const calculateBottles = (people: number, thirstiness: number) => {
-  return Math.ceil((people * thirstiness) / BOTTLE_LITERS);
+  return Math.ceil((people * thirstiness) / BOTTLE_CENTILITERS);
 };
 
 const calculatePizzaSlices = (people: number, hungriness: number) => {
@@ -23,7 +23,7 @@ const calculatePizzas = (people: number, hungriness: number) => {
 
 const Calculator = () => {
   const [people, setPeople] = useState(0);
-  const [thirstiness, setThirstiness] = useState(0.5);
+  const [thirstiness, setThirstiness] = useState(50);
   const [hungriness, setHungriness] = useState(3);
 
   return (
@@ -54,9 +54,9 @@ const Calculator = () => {
             setThirstiness(Number(e.target.value));
           }}
         >
-          <option value={0.33}>Noe å småslurke på</option>
-          <option value={0.5}>Tørst</option>
-          <option value={0.7}>Dehydrert</option>
+          <option value={33}>Noe å småslurke på</option>
+          <option value={50}>Tørst</option>
+          <option value={70}>Dehydrert</option>
         </select>
 
         <select
